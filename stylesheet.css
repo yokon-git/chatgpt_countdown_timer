@@ -1,0 +1,47 @@
+input[type="text"], button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 300px;
+    display: block;
+    margin: 10px auto;
+}
+
+button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+.timer-text {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #0a0a0a;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+#timer {
+    background-image: url("/images/background.jpg");
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explanation {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Countdown Timer </title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+
+<body>
+
+<div class="explanation">
+    <p>Countdown Timer made by ChatGPT feat. yokon-git</p>
+</div>
+
+<input type="text" id="timer-input" value="yyyy/mm/dd">
+<button id="start-timer">Start Timer</button> 
+<div id="timer">
+    <div class="timer-text" id="timer-text"></div>
+</div>
+<script>
+const timerInput = document.getElementById("timer-input");
+const startTimerButton = document.getElementById("start-timer");
+const timerText = document.getElementById("timer-text");
+
+timerInput.addEventListener("focus", function () {
+if (timerInput.value === "yyyy/mm/dd") {
+    timerInput.value = "";
+}
+});
+
+timerInput.addEventListener("blur", function () {
+if (timerInput.value === "") {
+    timerInput.value = "yyyy/mm/dd";
+}
+});
+
+startTimerButton.addEventListener("click", function() {
+    const targetDate = new Date(timerInput.value);
+    const currentDate = new Date();
+
+    const timeDifference = targetDate.getTime() - currentDate.getTime();
+
+
+
+    if (timeDifference > 0) {
+    setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerText.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    }, 1000);
+    } else {
+    timerText.innerHTML = "Invalid date entered";
+    }
+});
+</script>
+
+</body>
+</html>
