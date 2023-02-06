@@ -33,7 +33,7 @@ button {
 #timer {
     background-image: url("https://github.com/yokon-git/chatgpt_countdown_timer/blob/master/images/background.jpg?raw=true");
     background-size: cover;
-    height: 200px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
